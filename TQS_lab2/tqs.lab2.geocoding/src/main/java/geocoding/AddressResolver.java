@@ -35,7 +35,7 @@ public class AddressResolver {
     }
 
 
-    public Optional<Address> findAddressForLocation(double latitude, double longitude) throws URISyntaxException, IOException, ParseException, org.json.simple.parser.ParseException {
+    public Optional<Address> findAddressForLocation(double latitude, double longitude) throws URISyntaxException, IllegalArgumentException, IOException, ParseException, org.json.simple.parser.ParseException {
         if(latitude<-90 || latitude >90 || longitude < -180 || longitude > 180){
             throw new IllegalArgumentException("Error: Coordinates not valid");
         }
